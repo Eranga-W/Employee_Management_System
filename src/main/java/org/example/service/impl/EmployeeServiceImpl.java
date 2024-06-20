@@ -23,9 +23,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getAll() {
         List<Employee> employeeList = new ArrayList<>();
         List<EmployeeEntity> allEntityList = repository.findAll();
-        allEntityList.forEach(entity ->{
-            employeeList.add(new ObjectMapper().convertValue(entity, Employee.class));
-        });
+        allEntityList.forEach(entity ->
+            employeeList.add(new ObjectMapper().convertValue(entity, Employee.class))
+        );
         return employeeList;
     }
 
